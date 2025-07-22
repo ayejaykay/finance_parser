@@ -15,7 +15,7 @@ class File:
 
     def mvdir_to_cwd(self):
         try:
-            new_loc = shutil.move(f'C:\\Users\\akahl\\Downloads\\{self.filename}', f'{self.__location__}')
+            new_loc = shutil.move(f'{os.path.expanduser("~")}\\Downloads\\{self.filename}', f'{self.__location__}')
             print(f"File {self.filename} moved to {new_loc}")
             return 1
         except FileNotFoundError:
